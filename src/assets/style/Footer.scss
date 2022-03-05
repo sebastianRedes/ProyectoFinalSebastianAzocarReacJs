@@ -1,0 +1,26 @@
+.footer{
+    display: flex;
+  justify-content: space-between;
+  align-items: center;
+    margin: 0 50px;
+    height: 75px;
+}
+.footer__made{
+    display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.logo {
+    margin-left: 5px;
+  }
+  
+  .logo-img {
+    color: #00a9e6;
+  }
+
+  .footer__location {
+    span {
+      color: #14b600;
+    }
+  }

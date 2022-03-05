@@ -1,0 +1,23 @@
+.characterDetail{
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.characterDetail__container {
+    width: 400px;
+    height: 300px;
+    padding: 0 35px;
+    background-color: red;
+  }
+  
+  .characterDetail__item {
+    margin: 15px 0;
+  }
+  
+  .characterDetail__item-type {
+    color: green;
+    font-weight: bolder;
+  }
