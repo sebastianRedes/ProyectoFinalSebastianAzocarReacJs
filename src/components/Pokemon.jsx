@@ -130,7 +130,7 @@ const resp = "Hora: "+hr+":"+minuto;
         
         
       >
-        Agregar a Favoritos
+        Agregar a Lista de deseos
       </Button>
 
       <Modal show={modal} onHide={handleCloseModal}>
@@ -140,7 +140,7 @@ const resp = "Hora: "+hr+":"+minuto;
         <Modal.Body>
         <Card className="pokemon" style={{ width: "18rem" }}>
       <Card.Img
-        className="pokemon_img"
+        className="pokemon_img fluid"
         variant="right"
         src={sprites.other.dream_world.front_default}
       />
