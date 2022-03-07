@@ -77,7 +77,9 @@ const Pokemon = props => {
 
 
 const date = new Date();
-const minuto= date.getHours();
+const minuto= date.getMinutes();
+const hr =date.getHours();
+const resp = "Hora: "+hr+":"+minuto;
 
   return (
     <Card className="pokemon" style={{ width: "18rem" }}>
@@ -183,13 +185,13 @@ const minuto= date.getHours();
         </Modal.Footer>
       </Modal>
 
-      <Toast onClose={() => setShow(false)} show={show} delay={2000} autohide>
+      <Toast variant="secondary" onClose={() => setShow(false)} show={show} delay={2000} autohide >
   <Toast.Header>
     
-    <strong className="me-auto">Se Agrego con exito</strong>
-    <small>hora{minuto}</small>
+    <strong className="me-auto">Agregado</strong>
+    <small>{resp}</small>
   </Toast.Header>
-  <Toast.Body>Hello, world! This is a toast message.</Toast.Body>
+  <Toast.Body>Pokemon agregado exitosamente</Toast.Body>
 </Toast>
     </Card>
 

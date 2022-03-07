@@ -32,9 +32,9 @@ const Header = () => {
         </li>
         <li
           onClick={()=>handleSetSections("WichList")}
-          className={`header_nav_item${sectionActive==="WichList" ?"active":""}`}
+          className={`header_nav_item${sectionActive==="WishList" ?"active":""}`}
         >
-          <Link to="/pokemonwichlist">WichList</Link>
+          <Link to="/pokemonwichlist">WishList</Link>
         </li>
       </ul>
     </nav>
