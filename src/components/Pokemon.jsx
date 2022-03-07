@@ -3,21 +3,28 @@ import { connect } from "react-redux";
 import propTypes from "prop-types";
 import { setWishList, deleteWishList } from "../actions";
 import PokemonDetail from "../components/PokemonDetail";
-
-
-
 import Button from "react-bootstrap/Button";
-
 import Card from "react-bootstrap/Card";
 import Badge from "react-bootstrap/Badge";
 import { useEffect } from "react";
 import "../assets/style/Pokemon.scss";
 import Modal from 'react-bootstrap/Modal';
+import Toast from 'react-bootstrap/Toast'
+
+
+
+
 
 const Pokemon = props => {
   const [modal, setModal] = useState(false);
   const [wichlist, setWichList] = useState(false);
+  const [showA, setShowA] = useState(true);
+  const [showB, setShowB] = useState(true);
+  const [show, setShow] = useState(false);
 
+
+  const toggleShowA = () => setShowA(!showA);
+  const toggleShowB = () => setShowB(!showB);
   const { poke, wichlistPokemons, deleteWishList } = props;
   const {
     id,
@@ -68,6 +75,10 @@ const Pokemon = props => {
     repeat();
   }, []);
 
+
+const date = new Date();
+const minuto= date.getHours();
+
   return (
     <Card className="pokemon" style={{ width: "18rem" }}>
       <Card.Img
@@ -105,7 +116,17 @@ const Pokemon = props => {
         size="sm"
         className="btn mt-3 mb-2 center"
         variant="warning"
-        onClick={handleSetWichList}
+      //  onClick={handleSetWichList}
+        onClick={()=>{
+          const fun1=handleSetWichList;
+          const fun2=toggleShowA;
+          setShow(true);
+          fun1();
+          fun2();
+        
+        }}
+        
+        
       >
         Agregar a Favoritos
       </Button>
@@ -153,8 +174,6 @@ const Pokemon = props => {
         </Badge>
       </Card.Body>
     </Card>
-
-
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleCloseModal}>
@@ -163,6 +182,15 @@ const Pokemon = props => {
          
         </Modal.Footer>
       </Modal>
+
+      <Toast onClose={() => setShow(false)} show={show} delay={2000} autohide>
+  <Toast.Header>
+    
+    <strong className="me-auto">Se Agrego con exito</strong>
+    <small>hora{minuto}</small>
+  </Toast.Header>
+  <Toast.Body>Hello, world! This is a toast message.</Toast.Body>
+</Toast>
     </Card>
 
     
